@@ -1,25 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {AppLoading} from 'expo';
-import { StyleSheet, View, Image } from 'react-native';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import {DefaultTheme,Provider as PaperProvider} from 'react-native-paper';
+import SignupScreen from './src/screens/SignupScreen';
+import SigninScreen from './src/screens/SigninScreen';
 
-export default function App() {
-  return (
-    <View style={{flex:1,borderWidth:2,borderColor:'#000'}}>
-      <Image source={require('./assets/curve.png')}  style={styles.container}/>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    height:'40%',
-    width:'50%',
-    position:'absolute',
-    top:0,
-    right:0,
-    // justifyContent:'center',
-    // alignItems:'center'
+const theme = {
+  ...DefaultTheme,
+  roundness: 2,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#c21313',
   },
+};
+
+const navigator=createStackNavigator({
+  Signup:SignupScreen,
+  Signin:SigninScreen
+},
+{
+  initialRouteName:'Signup',
+  defaultNavigationOptions:{
+    headerShown:false,
+  }
 });
+
+const App = createAppContainer(navigator);
+
+export default ()=>{
+  return(
+    <PaperProvider theme={theme}>
+      <App/>
+    </PaperProvider>
+  )
+}
