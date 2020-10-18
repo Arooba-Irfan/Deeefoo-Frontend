@@ -3,7 +3,8 @@ import { StatusBar, StyleSheet, View,Image, KeyboardAvoidingView} from 'react-na
 import {Title} from 'react-native-paper';
 import CommonInputs from '../components/CommonInputs';
 import NavLink from '../components/NavLink';
-
+import Curve from '../components/curve';
+ 
 const SigninScreen=(props)=>{
     return(
         <View style={styles.container}>
@@ -11,6 +12,7 @@ const SigninScreen=(props)=>{
                 barStyle='dark-content'
                 hidden={true}
             />
+            <Curve/>
             <Title style={styles.text}>Sign In</Title>
             <CommonInputs
                 BtnText='Sign In'

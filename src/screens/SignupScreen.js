@@ -4,6 +4,7 @@ import {TextInput,Title} from 'react-native-paper';
 import CommonInputs from '../components/CommonInputs';
 import Spacer from '../components/Spacer';
 import NavLink from '../components/NavLink';
+import Curve from '../components/curve';
 
 const SignUp=(props)=>{
     return(
@@ -12,7 +13,7 @@ const SignUp=(props)=>{
                 barStyle='dark-content'
                 hidden={true}
             />
-            <View style={{height:250,width:250,position:'absolute',top:0,right:0}}></View>
+            <Curve/>
             <Title style={styles.text}>Sign Up</Title>
             <Spacer>
             <TextInput
@@ -28,7 +29,7 @@ const SignUp=(props)=>{
                 BtnText='Sign Up'
             />
             <NavLink
-                navText="Already have an account ? Sign in instread"
+                navText="Already have an account ? Sign in instead"
                 nav={props.navigation}
                 navRoute='Signin'
            />

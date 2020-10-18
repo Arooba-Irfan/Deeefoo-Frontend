@@ -32,5 +32,5 @@ export default ()=>{
     <PaperProvider theme={theme}>
       <App/>
     </PaperProvider>
-  )
+  );
 }

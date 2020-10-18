@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import { View, StyleSheet,KeyboardAvoidingView} from 'react-native';
 import { Button, TextInput} from 'react-native-paper';
 import Spacer from './Spacer';
@@ -15,7 +15,6 @@ const CommonInputs = ({BtnText}) => {
                     selectionColor="#c21313"
                     autoCapitalize='none'
                     autoCorrect={false}
-                    // onFocus={()=>setScreen(true)}
                 />
             </Spacer>
             <Spacer>
@@ -27,14 +26,12 @@ const CommonInputs = ({BtnText}) => {
                     selectionColor="#c21313"
                     autoCapitalize='none'
                     autoCorrect={false}
-                    // onFocus={()=>setScreen(true)}
                 />
             </Spacer>
             <Spacer>
                 <Button
                     mode="contained"
                     dark
-                    // onFocus={()=>setScreen(true)}
                     onPress={() => console.log('Pressed')}>
                     {BtnText}
                 </Button>
